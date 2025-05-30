@@ -55,7 +55,7 @@ Try it live: [https://hackvortex-iota.vercel.app/](https://hackvortex-iota.verce
 To run this project locally:
 
 ```bash
-git clone [MY link](https://github.com/bunnyexe1/HACKVORTEX)
+git clone (https://github.com/bunnyexe1/HACKVORTEX)
 cd luxury-auth-app
 npm install
 npm start
