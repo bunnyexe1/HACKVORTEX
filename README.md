@@ -59,6 +59,5 @@ To run this project locally:
 
 ```bash
 git clone https://github.com/bunnyexe1/HACKVORTEX
-cd luxury-auth-app
 npm install
 npm start
