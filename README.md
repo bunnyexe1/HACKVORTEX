@@ -50,6 +50,9 @@ Users can build verified collections, earn rewards, and engage with exclusive br
 
 Try it live: [https://hackvortex-iota.vercel.app/](https://hackvortex-iota.vercel.app/)
 
+
+second link   [Click Here](https://web-3-0-frontend.vercel.app/)
+
 ## 📦 Getting Started
 
 To run this project locally:
