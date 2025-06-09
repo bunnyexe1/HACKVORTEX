@@ -1,0 +1,94 @@
+/* src/components/Navigation.css */
+.main-navigation {
+  margin: 0 20px; /* Add some margin around navigation */
+}
+
+.main-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.main-navigation ul li {
+  margin-right: 25px; /* Slightly more spacing */
+  position: relative;
+}
+
+.main-navigation ul li:last-child {
+    margin-right: 0;
+}
+
+.main-navigation ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 0; /* Add some padding for easier clicking */
+  font-size: 1em;
+  font-weight: 500; /* Medium weight for nav links */
+}
+
+.main-navigation ul li a:hover {
+  color: #000;
+  text-decoration: none; /* Remove underline on hover, rely on color change */
+}
+
+.dropdown-container .basic-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the parent link */
+  left: 0;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-top: none; /* Avoid double border with header bottom */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  min-width: 180px; /* Minimum width for dropdown */
+  list-style: none;
+  z-index: 1000;
+  border-radius: 0 0 5px 5px;
+}
+
+.dropdown-container:hover .basic-dropdown {
+  display: block;
+}
+
+.basic-dropdown li {
+  padding: 8px 12px; /* Padding for dropdown items */
+  font-size: 0.95em;
+}
+.basic-dropdown li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Responsive adjustments for Navigation, aligning with Header.css media query */
+@media (max-width: 768px) {
+  .main-navigation {
+    width: 100%; /* Take full width to center its content */
+    margin: 10px 0; /* Adjust margin for column layout */
+  }
+  .main-navigation ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .main-navigation ul li {
+    margin: 8px 0; /* Vertical spacing for links */
+    width: 100%; /* Make list items take full width */
+    text-align: center; /* Center align the links */
+  }
+  .main-navigation ul li a {
+    display: block; /* Make links take full width of li */
+    padding: 10px 0; /* Larger clickable area */
+  }
+  .dropdown-container .basic-dropdown {
+    position: static; /* Change from absolute to static for column layout */
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%; /* Take full width */
+    background-color: #f9f9f9; /* Slightly different background for nested dropdown */
+  }
+  .basic-dropdown li {
+    text-align: center; /* Center text in dropdown */
+  }
+}

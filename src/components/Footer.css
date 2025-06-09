@@ -1,0 +1,217 @@
+/* src/components/Footer.css */
+.site-footer {
+  background-color: #f9f9f9; /* Slightly off-white */
+  color: #444; /* Darker grey for better readability */
+  padding: 50px 30px;
+  font-size: 0.9em;
+  line-height: 1.6; /* Improve line height */
+}
+
+.footer-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px; /* Increased gap */
+  margin-bottom: 40px;
+}
+
+.footer-newsletter {
+  /* Adjust span based on total columns; for 5 sections + app download, maybe it spans more or less */
+  grid-column: span 2; /* Default for smaller screens or if it's the widest element */
+}
+
+.footer-newsletter h5 {
+  margin-top: 0;
+  font-size: 1.2em; /* Larger heading */
+  color: #222;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  padding: 12px 15px; /* Larger padding */
+  border: 1px solid #dcdcdc;
+  border-radius: 5px 0 0 5px;
+  font-size: 1em;
+}
+ .newsletter-input:focus {
+  border-color: #ababab;
+  outline: none;
+}
+
+.newsletter-button {
+  padding: 12px 20px; /* Larger padding */
+  background-color: #222; /* Darker button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  font-size: 1em;
+  font-weight: 500;
+}
+.newsletter-button:hover {
+  background-color: #000;
+}
+
+.newsletter-disclaimer {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.footer-links-wrapper {
+  display: contents; /* Allows sections to participate in the main grid */
+}
+
+.footer-links-section h6 {
+  color: #222;
+  font-size: 1.05em; /* Slightly larger section titles */
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer-links-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-section ul li {
+  margin-bottom: 10px; /* Increased spacing */
+}
+
+.footer-links-section ul li a,
+.footer-links-section ul li .link-button {
+  text-decoration: none;
+  color: #444;
+}
+
+.footer-links-section ul li a:hover,
+.footer-links-section ul li .link-button:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.link-button { /* For "Location Preferences" */
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 1em; /* Ensure it matches link font size */
+  cursor: pointer;
+  color: #444;
+  text-align: left;
+}
+
+.footer-app-download {
+  text-align: left; /* Align left for consistency */
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  grid-column: span 1; /* Default span */
+}
+.footer-app-download p {
+    margin-bottom: 15px;
+    margin-top: 0; /* Align with section titles */
+}
+.footer-app-download h6 { /* Optional: if you want a title for this section too */
+    color: #222;
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+
+.download-app-button {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 12px 22px; /* Larger button */
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.download-app-button:hover {
+    background-color: #333;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #e0e0e0; /* Lighter border */
+  font-size: 0.85em;
+  color: #666;
+}
+
+/* Responsive adjustments for Footer */
+@media (max-width: 992px) { /* Tablet and below */
+    .footer-newsletter {
+        grid-column: span var(--grid-columns, 2); /* Uses number of columns in the grid */
+    }
+    .footer-app-download {
+        grid-column: span var(--grid-columns, 1);
+    }
+    .footer-links-section {
+        /* Ensure each link section takes full width or half width depending on space */
+        grid-column: span 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-content {
+        /* Example: Newsletter (1.5fr) | 5 Link Sections (distributed in 3fr) | App Download (1fr) */
+        grid-template-columns: 1.5fr 3fr 1fr;
+        align-items: start;
+        gap: 40px; /* Wider gap for desktop */
+    }
+    .footer-newsletter {
+        grid-column: auto; /* Reset from span */
+    }
+    .footer-links-wrapper {
+         grid-column: auto; /* Reset from span */
+         display: grid;
+         /* Dynamically create columns for the link sections themselves */
+         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+         gap: 30px; /* Gap between link sections */
+    }
+     .footer-app-download {
+        grid-column: auto; /* Reset from span */
+        text-align: left;
+     }
+}
+
+@media (max-width: 767px) { /* Mobile */
+  .footer-content {
+    grid-template-columns: 1fr; /* Stack everything */
+    gap: 25px;
+  }
+  .footer-newsletter, .footer-app-download, .footer-links-section {
+    grid-column: auto; /* Reset span for stacked layout */
+    text-align: center; /* Center text for stacked items */
+  }
+  .newsletter-form {
+    flex-direction: column; /* Stack input and button */
+  }
+  .newsletter-input, .newsletter-button {
+    border-radius: 5px; /* Full radius for stacked form elements */
+    margin-bottom: 10px;
+  }
+  .newsletter-button {
+    margin-bottom: 0;
+  }
+  .footer-links-section h6, .footer-app-download p, .footer-app-download h6 {
+      text-align: center;
+  }
+   .footer-links-section ul li .link-button {
+       text-align: center;
+       width: 100%;
+   }
+}

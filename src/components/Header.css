@@ -1,0 +1,89 @@
+/* src/components/Header.css */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0; /* Lighter border */
+  padding: 15px 30px; /* More padding */
+  position: sticky; /* Sticky header */
+  top: 0;
+  z-index: 1050; /* Ensure it's above other content */
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px; /* Wider max-width */
+  margin: 0 auto;
+}
+
+.header-logo a {
+  text-decoration: none;
+  color: #111; /* Darker logo text */
+  font-size: 1.8em; /* Slightly larger */
+  font-weight: 700; /* Bolder */
+}
+
+.search-input {
+  padding: 10px 15px; /* More padding */
+  border: 1px solid #dcdcdc; /* Lighter border */
+  border-radius: 5px;
+  min-width: 300px;
+  font-size: 0.95em;
+}
+
+.search-input:focus {
+  border-color: #ababab;
+  outline: none;
+}
+
+.header-account-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-account-actions button {
+  margin-left: 12px;
+  padding: 9px 15px; /* Consistent padding */
+  cursor: pointer;
+  background-color: #f0f0f0; /* Light grey button */
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.header-account-actions button:hover {
+  background-color: #e0e0e0;
+  border-color: #c0c0c0;
+}
+
+.header-account-actions span { /* For "Location" placeholder */
+    margin-left: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Basic responsiveness for header */
+@media (max-width: 768px) {
+  .header-main {
+    flex-direction: column;
+  }
+  .header-search {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .search-input {
+    width: 100%; /* Make search input full width on smaller screens */
+    min-width: 0; /* Override min-width */
+  }
+  /* Navigation styles will be handled in Navigation.css for media queries */
+  .header-account-actions {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-around; /* Distribute buttons a bit */
+  }
+  .header-account-actions button {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
