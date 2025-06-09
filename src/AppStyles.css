@@ -1,14 +1,53 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll from minor vw issues */
+}
+
+#root { /* Assuming #root is the entry point in index.html */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure .container within #root also supports flex layout if it's the primary child */
+.container {
+  /* min-height: 100vh; remove if #root handles this */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow .container to fill #root */
+  /* background-color: #f7f8fa; */ /* Keep or remove based on desired global bg */
+  /* font-family: Arial, sans-serif; */ /* Define globally on body or html */
+}
+
+.mainContent {
+  flex-grow: 1; /* Allows mainContent to take available vertical space */
+  display: flex; /* To allow canvas to stretch if needed */
+  flex-direction: column; /* Stack content normally */
+  position: relative; /* For potential absolute positioning of canvas or children */
+  /* max-width: 1200px; */ /* Remove or adjust if canvas needs full width */
+  /* margin: 0 auto; */ /* Remove or adjust if canvas needs full width */
+  /* padding: 32px 20px; */ /* Remove or adjust if canvas needs full width */
+}
+
+/* Original AppStyles.css content starts below */
+
 /* AppStyles.css */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
+/* First instance of .container - modified by pre-pended rules */
+/*
 .container {
   min-height: 100vh;
   background-color: #f7f8fa;
   font-family: Arial, sans-serif;
 }
+*/
 
 .header {
   background-color: #ffffff;
@@ -60,11 +99,14 @@
   background-color: #4338ca;
 }
 
+/* First instance of .mainContent - modified by pre-pended rules */
+/*
 .mainContent {
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 20px;
 }
+*/
 
 .loadingContainer {
   display: flex;

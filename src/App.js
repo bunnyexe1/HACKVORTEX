@@ -4,11 +4,12 @@ import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import axios from "axios";
 import NFTMarketplace from "./NFTMarketplace.json";
+import LuxuryShowroom from './components/LuxuryShowroom'; // Import LuxuryShowroom
 import './AppStyles.css';
 
 const CONTRACT_ADDRESS = "0x280cfD737f25B769ACDeF66593fbC8cB8feF99AC";
-const PINATA_API_KEY = "306776bc7e53b9919849";
-const PINATA_SECRET_KEY = "5e4e0f567f83838489afd66d67678e48d694062469871ee4f00d9dbcff0ab821";
+const PINATA_API_KEY = process.env.REACT_APP_PINATA_API_KEY;
+const PINATA_SECRET_KEY = process.env.REACT_APP_PINATA_SECRET_KEY;
 
 function Home() {
   const [listings, setListings] = useState([]);
@@ -169,7 +170,7 @@ function Home() {
           <div className="loadingContainer">
             <div className="spinner"></div>
           </div>
-        ) : listings.length === 0 ? (
+        ) : listings.length === 0 && !loading ? ( // Ensure !loading condition for empty state
           <div className="emptyState">
             <h2 className="emptyStateTitle">No NFTs available.</h2>
             <p className="emptyStateText">Visit the Admin page to list some!</p>
@@ -183,6 +184,11 @@ function Home() {
             </Link>
           </div>
         ) : (
+          // Replace the 2D cardGrid with LuxuryShowroom
+          <LuxuryShowroom listings={listings} walletAddress={walletAddress} />
+
+          /*
+          // Old 2D cardGrid - can be commented out or removed for now
           <div className="cardGrid">
             {listings.map((nft) => {
               const cid = extractCid(nft.imageUrl);
@@ -262,6 +268,7 @@ function Home() {
               );
             })}
           </div>
+          */
         )}
       </main>
     </div>
@@ -297,8 +304,8 @@ function Admin() {
     try {
       const res = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
         headers: {
-          pinata_api_key: PINATA_API_KEY,
-          pinata_secret_api_key: PINATA_SECRET_KEY,
+          pinata_api_key: process.env.REACT_APP_PINATA_API_KEY,
+          pinata_secret_api_key: process.env.REACT_APP_PINATA_SECRET_KEY,
           "Content-Type": "multipart/form-data",
         },
       });
