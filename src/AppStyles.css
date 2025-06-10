@@ -1,24 +1,81 @@
 /* src/AppStyles.css (or App.css) */
 .App {
-  text-align: center; /* Restore if it was removed */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #fff; /* Default app background, can be overridden by pages */
 }
 
 .App-main {
-    padding: 0 20px; /* Add some horizontal padding to main content area */
-    flex-grow: 1; /* Ensures main content takes up available space */
-    width: 100%;
-    max-width: 1300px; /* Consistent max-width with header/footer content areas */
-    margin: 0 auto; /* Center the main content area */
-    box-sizing: border-box; /* Include padding in width calculation */
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1300px; /* Consistent max-width with header/footer content areas */
+  margin: 0 auto; /* Center the main content area */
+  padding: 20px 15px; /* Default padding for main content area, adjust if needed */
+  box-sizing: border-box;
 }
 
-/* Example of ensuring footer is pushed down, adjust numbers as needed */
-/* This min-height is a fallback, flex-grow on App-main is usually better */
-/* .App-main {
-    min-height: calc(100vh - 70px - 300px);
-    Header height (approx 70px with padding)
-    Footer height (can be variable, estimate 300px for a rich footer)
-} */
+/* Specific page containers within App-main might override padding or max-width if needed */
+
+/* Example: if some pages need a different background color for the main area */
+/* .App-main.bg-light-grey { background-color: #f8f9fa; } */
+
+/* Ensure global link styles from index.css apply correctly. */
+/* If .App a {} was defined here, it might need adjustment. */
+
+/* Typography should largely be inherited from index.css body and heading styles. */
+/* Avoid redefining base font-family, color, etc., here unless specifically for .App scope. */
+
+/* Centering text for the entire app, if it was intended. Generally, text alignment is component-specific. */
+/* .App { text-align: center; } */
+/* If this was set, ensure components now handle their own text-alignment:
+   Header items, Navigation, ProductGrid cards, Footer sections, etc.,
+   should mostly be text-align: left; or text-align: center; as appropriate.
+   The global text-align: center was removed from .App in a previous step to allow more natural component-level text alignment.
+*/
+
+/* Styles for static content pages, moved from AboutPage.css */
+.static-page-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  line-height: 1.7;
+  color: #333; /* Base text color from index.css */
+}
+
+.static-page-container .section-title { /* Ensure section titles within static pages are consistent */
+  /* font-size: 1.8em; Inherited from h2 or override */
+  border-bottom: 2px solid #007bff; /* Default accent */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+
+.static-page-container .cta-section {
+  text-align: center;
+  padding: 35px 25px;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  margin-top: 35px;
+}
+
+.static-page-container .cta-title {
+  /* font-size: 1.6em; Inherited or override */
+  margin-bottom: 15px;
+}
+
+.static-page-container .cta-text {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.static-page-container .cta-button {
+  /* Base styles from .button-base .button-primary in index.css */
+  /* Specific overrides for CTA context: */
+  padding: 12px 30px;
+  font-size: 1.1em;
+}

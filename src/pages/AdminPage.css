@@ -1,0 +1,156 @@
+/* src/pages/AdminPage.css */
+.admin-page-container {
+  max-width: 900px;
+  margin: 30px auto; /* Consistent with static pages */
+  padding: 25px;    /* Slightly more padding */
+  background-color: #fff; /* Changed from #f9f9f9 to be consistent with other page containers */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07); /* Adjusted shadow */
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px; /* Increased padding */
+  border-bottom: 1px solid #e0e0e0; /* Lighter border */
+}
+
+.admin-header h1 {
+  /* font-size: 1.8em; Inherited from global h2 or h1 if AdminPage uses h1 */
+  /* color: #333; Inherited */
+  margin: 0;
+}
+
+.back-link {
+  /* font-size: 0.95em; Inherited from global 'a' or overridden */
+  /* color: #007bff; Inherited */
+  /* text-decoration: none; Inherited */
+}
+/* .back-link:hover { text-decoration: underline; } Inherited */
+
+.form-and-preview-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .form-and-preview-container {
+    grid-template-columns: 2fr 1.5fr; /* Adjusted ratio for better preview space */
+  }
+  .form-and-preview-container > .form-container-admin:only-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.form-container-admin {
+  background-color: #f9f9f9; /* Light background for form area */
+  padding: 20px; /* Reduced padding */
+  border-radius: 6px; /* Softer radius */
+  border: 1px solid #e9e9e9; /* Light border for form container */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333; /* Darker label text */
+}
+
+.form-group input[type="text"] {
+  /* Uses .input-base from index.css */
+  /* No specific overrides needed unless design differs significantly */
+}
+
+.file-label {
+    cursor: pointer;
+    display: block;
+}
+
+.file-upload-area {
+  border: 2px dashed #007bff; /* Primary color for dashed border */
+  border-radius: 5px; /* Consistent radius */
+  padding: 25px; /* Increased padding */
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff; /* White background */
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.file-upload-area:hover {
+  border-color: #0056b3; /* Darker primary on hover */
+  background-color: #f8f9fa; /* Slight background change on hover */
+}
+.file-upload-area p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95em; /* Slightly larger text */
+}
+.file-preview-image {
+  max-width: 100%;
+  max-height: 120px; /* Reduced max height */
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.file-name-display {
+    font-size: 0.85em; /* Smaller file name */
+    color: #333;
+    margin-top: 10px; /* Increased margin */
+    text-align: center;
+}
+
+.list-button,
+.admin-page-container .upload-preview-button { /* Generic class for this page's buttons */
+  /* Uses .button-base .button-primary (or .button-success) */
+  width: 100%;
+  padding: 12px 15px; /* Standardized padding */
+  font-size: 1.05em; /* Standardized font size */
+}
+
+.upload-preview-button { /* Specific if needs different color than primary */
+    background-color: #17a2b8; /* Example: Info color */
+    border-color: #17a2b8;
+    color: white;
+    margin-top: 10px; /* Space if it's a separate button */
+}
+.upload-preview-button:hover:not(:disabled) {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+
+.ipfs-preview-container {
+  background-color: #f9f9f9; /* Consistent with form container bg */
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #e9e9e9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ipfs-preview-container h3 {
+    /* margin-top: 0; Inherited */
+    margin-bottom: 15px;
+    /* color: #333; Inherited */
+    font-size: 1.3em; /* Consistent heading size */
+}
+.ipfs-preview-image {
+  max-width: 100%;
+  max-height: 200px; /* Reduced max height */
+  border-radius: 4px;
+  border: 1px solid #ddd; /* Lighter border for image */
+  margin-bottom: 10px;
+}
+.cid-text {
+  font-size: 0.8em; /* Smaller CID text */
+  color: #666;
+  word-break: break-all;
+  margin-bottom: 5px;
+}

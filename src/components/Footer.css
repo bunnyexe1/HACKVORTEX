@@ -1,29 +1,29 @@
 /* src/components/Footer.css */
 .site-footer {
-  background-color: #f9f9f9; /* Slightly off-white */
-  color: #444; /* Darker grey for better readability */
-  padding: 50px 30px;
-  font-size: 0.9em;
-  line-height: 1.6; /* Improve line height */
+  background-color: #f9f9f9;
+  color: #444;
+  padding: 50px 20px; /* Consistent horizontal padding with App-main */
+  font-size: 0.9em; /* Slightly smaller base for footer text */
+  line-height: 1.6;
 }
 
 .footer-content {
-  max-width: 1300px;
+  max-width: 1300px; /* Consistent with App-main and Header */
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px; /* Increased gap */
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted minmax for better fit */
+  gap: 30px;
+  margin-bottom: 30px; /* Reduced bottom margin */
 }
 
 .footer-newsletter {
-  /* Adjust span based on total columns; for 5 sections + app download, maybe it spans more or less */
-  grid-column: span 2; /* Default for smaller screens or if it's the widest element */
+  /* Spanning behavior will depend on final grid structure, this is a placeholder */
+  grid-column: span 2;
+  /* If using explicit 5-column layout for links later, this might be 1fr or similar */
 }
 
 .footer-newsletter h5 {
-  margin-top: 0;
-  font-size: 1.2em; /* Larger heading */
+  font-size: 1.25em; /* Adjusted from hN globals if needed */
   color: #222;
   font-weight: 600;
   margin-bottom: 15px;
@@ -35,43 +35,45 @@
 }
 
 .newsletter-input {
-  flex-grow: 1;
-  padding: 12px 15px; /* Larger padding */
-  border: 1px solid #dcdcdc;
-  border-radius: 5px 0 0 5px;
-  font-size: 1em;
+  /* Use .input-base from index.css */
+  /* Specific overrides: */
+  border-radius: 5px 0 0 5px; /* Keep specific radius for joined elements */
+  font-size: 0.95em; /* Slightly smaller if desired for footer context */
 }
- .newsletter-input:focus {
-  border-color: #ababab;
-  outline: none;
+.newsletter-input:focus {
+  /* Focus style is inherited from .input-base, ensure it doesn't get cut off by button */
+  position: relative; /* May help with z-index if needed, but usually not */
+  z-index: 2;
 }
+
 
 .newsletter-button {
-  padding: 12px 20px; /* Larger padding */
-  background-color: #222; /* Darker button */
-  color: white;
-  border: none;
-  cursor: pointer;
+  /* Use .button-base and .button-primary (or a new .button-dark) from index.css */
+  /* Specific overrides: */
   border-radius: 0 5px 5px 0;
-  font-size: 1em;
-  font-weight: 500;
+  padding: 10px 15px; /* Adjusted to align with input if needed */
+  font-size: 0.95em; /* Match input */
+  background-color: #343a40; /* Darker button, example */
+  border-color: #343a40;
 }
-.newsletter-button:hover {
-  background-color: #000;
+.newsletter-button:hover:not(:disabled) {
+  background-color: #23272b;
+  border-color: #1d2124;
 }
 
+
 .newsletter-disclaimer {
-  font-size: 0.85em;
+  font-size: 0.8em; /* Smaller for disclaimer */
   color: #666;
 }
 
 .footer-links-wrapper {
-  display: contents; /* Allows sections to participate in the main grid */
+  display: contents;
 }
 
 .footer-links-section h6 {
+  font-size: 1.1em; /* Adjusted from hN globals */
   color: #222;
-  font-size: 1.05em; /* Slightly larger section titles */
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -83,18 +85,19 @@
 }
 
 .footer-links-section ul li {
-  margin-bottom: 10px; /* Increased spacing */
+  margin-bottom: 8px;
 }
 
 .footer-links-section ul li a,
 .footer-links-section ul li .link-button {
-  text-decoration: none;
-  color: #444;
+  /* Inherits 'a' styles from index.css */
+  color: #444; /* Footer specific link color */
+  font-size: 0.95em; /* Slightly smaller links in footer */
 }
 
 .footer-links-section ul li a:hover,
 .footer-links-section ul li .link-button:hover {
-  color: #000;
+  color: #0056b3; /* Consistent hover from index.css */
   text-decoration: underline;
 }
 
@@ -102,90 +105,86 @@
   background: none;
   border: none;
   padding: 0;
-  font: inherit;
-  font-size: 1em; /* Ensure it matches link font size */
+  font: inherit; /* Ensure it matches surrounding text/link styles */
+  font-size: 0.95em; /* Match link font size */
   cursor: pointer;
   color: #444;
   text-align: left;
 }
+.link-button:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
 
 .footer-app-download {
-  text-align: left; /* Align left for consistency */
+  text-align: left;
   padding: 0;
   background-color: transparent;
   border-radius: 0;
-  grid-column: span 1; /* Default span */
+  /* Spanning behavior depends on grid, this is a placeholder */
+  grid-column: span 1;
 }
 .footer-app-download p {
-    margin-bottom: 15px;
-    margin-top: 0; /* Align with section titles */
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 0.95em;
 }
-.footer-app-download h6 { /* Optional: if you want a title for this section too */
+.footer-app-download h6 {
+    font-size: 1.1em;
     color: #222;
-    font-size: 1.05em;
     font-weight: 600;
     margin-bottom: 12px;
 }
 
-
 .download-app-button {
-  display: inline-block;
-  background-color: #000;
-  color: #fff;
-  padding: 12px 22px; /* Larger button */
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
+  /* Use .button-base and .button-dark (similar to newsletter) or .button-primary */
+  padding: 10px 20px;
   font-weight: 500;
+  font-size: 0.95em;
+  background-color: #343a40; /* Dark button */
+  border-color: #343a40;
+  color: white;
 }
-.download-app-button:hover {
-    background-color: #333;
+.download-app-button:hover:not(:disabled) {
+    background-color: #23272b;
+    border-color: #1d2124;
 }
 
 .footer-copyright {
   text-align: center;
-  margin-top: 40px;
-  padding-top: 25px;
-  border-top: 1px solid #e0e0e0; /* Lighter border */
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
   font-size: 0.85em;
   color: #666;
 }
 
 /* Responsive adjustments for Footer */
-@media (max-width: 992px) { /* Tablet and below */
-    .footer-newsletter {
-        grid-column: span var(--grid-columns, 2); /* Uses number of columns in the grid */
+@media (min-width: 768px) and (max-width: 1023px) { /* Tablet */
+    .footer-content {
+        /* Example: 3 columns for link sections, newsletter and app download might span more */
+        grid-template-columns: repeat(3, 1fr);
     }
-    .footer-app-download {
-        grid-column: span var(--grid-columns, 1);
-    }
-    .footer-links-section {
-        /* Ensure each link section takes full width or half width depending on space */
-        grid-column: span 1;
-    }
+    .footer-newsletter { grid-column: span 3; } /* Full width */
+    .footer-app-download { grid-column: span 3; text-align: center; } /* Full width, centered */
+    .footer-links-section { grid-column: span 1; }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) { /* Desktop */
     .footer-content {
-        /* Example: Newsletter (1.5fr) | 5 Link Sections (distributed in 3fr) | App Download (1fr) */
+        /* Example: Newsletter | 5 Link Sections | App Download */
+        /* This implies about 7 effective columns. Let's try a 1.5fr (News) | 3fr (Links) | 1fr (App) structure */
         grid-template-columns: 1.5fr 3fr 1fr;
         align-items: start;
-        gap: 40px; /* Wider gap for desktop */
+        gap: 40px;
     }
-    .footer-newsletter {
-        grid-column: auto; /* Reset from span */
-    }
+    .footer-newsletter { grid-column: auto; }
     .footer-links-wrapper {
-         grid-column: auto; /* Reset from span */
+         grid-column: auto;
          display: grid;
-         /* Dynamically create columns for the link sections themselves */
-         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-         gap: 30px; /* Gap between link sections */
+         grid-template-columns: repeat(5, 1fr); /* For 5 link sections */
+         gap: 20px; /* Gap between link sections */
     }
-     .footer-app-download {
-        grid-column: auto; /* Reset from span */
-        text-align: left;
-     }
+     .footer-app-download { grid-column: auto; text-align: left; }
 }
 
 @media (max-width: 767px) { /* Mobile */
@@ -194,23 +193,24 @@
     gap: 25px;
   }
   .footer-newsletter, .footer-app-download, .footer-links-section {
-    grid-column: auto; /* Reset span for stacked layout */
-    text-align: center; /* Center text for stacked items */
+    grid-column: auto; /* Reset span */
+    text-align: center;
   }
-  .newsletter-form {
-    flex-direction: column; /* Stack input and button */
-  }
-  .newsletter-input, .newsletter-button {
-    border-radius: 5px; /* Full radius for stacked form elements */
-    margin-bottom: 10px;
-  }
-  .newsletter-button {
-    margin-bottom: 0;
-  }
-  .footer-links-section h6, .footer-app-download p, .footer-app-download h6 {
+  .footer-app-download p, .footer-links-section ul {
       text-align: center;
   }
-   .footer-links-section ul li .link-button {
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-input, .newsletter-button {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .newsletter-button { margin-bottom: 0; }
+  .footer-links-section h6, .footer-app-download h6 {
+      text-align: center;
+  }
+   .link-button {
        text-align: center;
        width: 100%;
    }
