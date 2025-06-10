@@ -1,0 +1,134 @@
+/* src/pages/HowToUsePage.css */
+/* .static-page-container and .cta-section/.cta-button moved to AppStyles.css */
+
+.how-to-use-hero {
+  text-align: center;
+  padding: 35px 20px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  /* Margin adjustment assuming .static-page-container has padding: 25px 30px; */
+  margin: -25px -30px 35px -30px;
+}
+
+.how-to-use-title {
+  margin-bottom: 10px;
+}
+
+.how-to-use-subtitle {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+@media (min-width: 768px) {
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ @media (min-width: 992px) {
+  .steps-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-card {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.step-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+.step-number {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #007bff;
+  margin-right: 15px;
+  line-height: 1.3;
+  min-width: 25px;
+  text-align: center;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.step-instructions {
+    padding-left: 18px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #444;
+}
+.step-instructions li {
+    margin-bottom: 6px;
+}
+
+.step-link {
+  /* Uses .button-base .button-primary (or .button-info) from index.css */
+  /* Specific overrides: */
+  padding: 8px 12px;
+  font-size: 0.9em; /* Match general button font size or specific small size */
+}
+
+.troubleshooting-section {
+  margin-bottom: 35px;
+  padding: 25px;
+  background-color: #fffcf1;
+  border-radius: 6px;
+  border: 1px solid #ffecb3;
+}
+.troubleshooting-title {
+  /* .static-page-container .section-title might apply, or define specifically if different accent needed */
+  border-bottom: 2px solid #ffc107;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.troubleshooting-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.issue-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #ffe599;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.issue-card h4 {
+  color: #b95000;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.issue-card p {
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* CTA section and button styles are now expected to be inherited from .static-page-container rules in AppStyles.css */

@@ -1,0 +1,107 @@
+/* src/components/Header.css */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.header-logo a {
+  text-decoration: none; /* Already in index.css a {} but good for specificity */
+  color: #111;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.header-logo a:hover {
+  text-decoration: none; /* No underline for logo on hover */
+  color: #0056b3; /* Match link hover from index.css */
+}
+
+
+.header-search {
+  flex-grow: 1; /* Allow search to take available space if needed */
+  margin: 0 20px; /* Add some margin around search */
+  max-width: 400px; /* Max width for search bar */
+}
+.search-input {
+  /* Use input-base for foundational styling */
+  /* Specific overrides for search if needed: */
+  min-width: 100%; /* Take full width of .header-search */
+  font-size: 0.95em; /* Slightly smaller than default input if needed */
+}
+
+.header-account-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.header-account-actions > *:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* Wallet display style */
+.wallet-display {
+  padding: 8px 12px; /* Slightly less padding than full buttons */
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 0.9em;
+  color: #333;
+  line-height: 1.5; /* Consistent line height */
+}
+
+/* Styling for Link components to look like buttons */
+.header-button-link {
+  /* Uses .button-base and .button-light from index.css */
+  /* Add any specific overrides for header context if needed */
+  font-size: 0.9em; /* Match other header action items */
+}
+
+/* Connect Wallet button styling */
+.connect-wallet-button {
+  /* Uses .button-base and .button-primary from index.css */
+  font-size: 0.9em; /* Match other header action items */
+}
+
+
+/* Basic responsiveness for header */
+@media (max-width: 768px) {
+  .header-main {
+    flex-direction: column;
+    align-items: stretch; /* Stretch items to full width */
+  }
+  .header-logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .header-search {
+    margin: 10px 0;
+    width: 100%;
+    max-width: none; /* Allow full width */
+  }
+  .search-input {
+    min-width: 0; /* Override min-width */
+  }
+  .header-account-actions {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center; /* Center actions */
+  }
+  .header-account-actions > * { /* Ensure items have some bottom margin when wrapped */
+    margin-bottom: 5px;
+  }
+  .header-account-actions > *:not(:last-child) {
+    margin-right: 5px; /* Reduce right margin for wrapped items */
+  }
+}

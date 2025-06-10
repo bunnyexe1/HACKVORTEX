@@ -1,0 +1,68 @@
+/* src/pages/AboutPage.css */
+/* .static-page-container and .cta-section/.cta-button moved to AppStyles.css */
+
+.about-hero {
+  text-align: center;
+  padding: 35px 20px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  /* Margin adjustment assuming .static-page-container has padding: 25px 30px; */
+  margin: -25px -30px 35px -30px;
+}
+
+.about-title {
+  margin-bottom: 10px;
+}
+
+.about-subtitle {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.about-content {
+  /* No specific padding needed if .static-page-container handles it */
+}
+
+.about-section {
+  margin-bottom: 35px;
+}
+
+/* .section-title is now handled by .static-page-container .section-title in AppStyles.css */
+/* If AboutPage needs a different accent for its section titles, define it here: */
+/* .about-container .section-title { border-bottom-color: #another-color; } */
+
+
+.section-text {
+  margin-bottom: 20px;
+}
+
+.feature-grid, .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.feature-card, .benefit-card {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.feature-card h3, .benefit-card h3 {
+  color: #007bff; /* Primary color for these titles */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding-left: 0;
+}
+.benefits-list li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  position: relative;
+}

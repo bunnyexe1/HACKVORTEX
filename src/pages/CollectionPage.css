@@ -1,0 +1,89 @@
+/* src/pages/CollectionPage.css */
+.collection-page-container {
+  max-width: 1300px; /* Consistent with App-main */
+  margin: 20px auto;
+  padding: 0 15px; /* Consistent with App-main horizontal padding */
+  min-height: 60vh;
+}
+
+.collection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px; /* Reduced margin */
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0; /* Lighter border */
+}
+
+.collection-header h1 {
+  /* font-size: 1.8em; Inherited from h2 or override */
+  /* color: #333; Inherited */
+  margin: 0;
+}
+
+.collection-nav-links .nav-button {
+    /* Uses .button-base .button-light from index.css */
+    /* Specific overrides: */
+    margin-left: 15px;
+    padding: 8px 12px; /* Smaller padding for nav context */
+    font-size: 0.9em;
+}
+
+/* Message Styling */
+/* These should ideally use global classes like .error-message-global, .info-message-global from index.css */
+/* If not, ensure they are styled consistently here. */
+.loading-message { /* For loading text */
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em; /* Larger for loading */
+    color: #555;
+}
+
+.collection-page-container .error-message { /* Specific to errors within this page */
+    /* Consider using .error-message-global from index.css */
+    /* If keeping specific: */
+    text-align: center;
+    padding: 15px; /* Standardized padding */
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px; /* Consistent radius */
+    margin: 20px 0; /* Centered block */
+}
+
+.collection-page-container .info-message { /* For "No NFTs" or "Connect Wallet" messages */
+    /* Consider using .info-message-global from index.css */
+    /* If keeping specific: */
+    text-align: center;
+    padding: 30px; /* Reduced padding */
+    font-size: 1.1em;
+    color: #333; /* Darker text */
+    background-color: #f8f9fa; /* Consistent light background */
+    border-radius: 6px; /* Consistent radius */
+    border: 1px solid #e9ecef; /* Lighter border */
+    margin: 20px 0;
+}
+.collection-page-container .info-message h2 {
+    /* font-size: 1.5em; Inherited from h3 or override */
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #222; /* Darker heading */
+}
+.collection-page-container .info-message p {
+    margin-bottom: 20px;
+    color: #555; /* Lighter paragraph text */
+}
+
+.collection-page-container .info-message .action-button,
+.collection-page-container .info-message .explore-button {
+    /* Uses .button-base .button-primary from index.css */
+    /* Specific overrides: */
+    margin-top: 15px; /* Reduced margin */
+    padding: 10px 20px;
+}
+
+/* ProductGrid styling is primarily handled by ProductGrid.css */
+/* Any overrides specific to CollectionPage context can be added here: */
+/* e.g., .collection-page-container .product-grid { ... } */
+/* or .collection-page-container .product-card { ... } */
+/* For now, assuming ProductGrid.css is sufficient. */

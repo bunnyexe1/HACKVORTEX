@@ -1,0 +1,151 @@
+/* src/components/ProductGrid.css */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 30px;
+  padding: 20px 0; /* Remove horizontal padding, App-main handles it */
+  max-width: 100%; /* Grid itself takes full width of parent */
+  margin: 30px auto;
+}
+
+.product-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.product-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #f8f8f8; /* Background for transparent images */
+}
+
+.product-image-placeholder-fallback { /* Renamed from previous product-image-placeholder */
+  width: 100%;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  color: #999;
+  font-size: 0.9em;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.product-info {
+  padding: 15px; /* Reduced padding slightly from 18px */
+  text-align: left;
+  flex-grow: 1;
+  display: flex; /* Added to help with footer (actions) alignment */
+  flex-direction: column; /* Stack info and actions */
+}
+
+.product-name {
+  font-size: 1.1em; /* Adjusted from 1.15em */
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 8px 0; /* Reduced bottom margin */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  font-size: 1em; /* Adjusted from 1.05em */
+  color: #000;
+  font-weight: 700;
+  margin: 0 0 10px 0; /* Reduced bottom margin */
+}
+
+.product-description {
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px; /* Add some margin before actions */
+}
+
+.product-seller, .product-buyer {
+    font-size: 0.8em;
+    color: #777;
+    margin-bottom: 5px;
+    word-break: break-all;
+}
+
+.product-actions {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.action-button {
+  /* Base styles from .button-base in index.css will be used. */
+  /* Specific overrides or additional styles: */
+  width: 100%;
+  font-size: 0.9em; /* Slightly smaller for card context */
+  padding: 8px 12px; /* Smaller padding for card buttons */
+}
+
+.buy-button {
+  /* Extends .button-base .button-primary (or a new .button-success) */
+  /* Example if we made a .button-success based on ProductGrid's green */
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+.buy-button:hover:not(:disabled) {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.redeem-button {
+  /* Extends .button-base .button-primary */
+  /* Already aligns with .button-primary from index.css if blue is the primary color */
+}
+
+.status-text {
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+    padding: 8px 0; /* Give it similar vertical space as buttons */
+    font-size: 0.9em;
+}
+
+
+.product-card.sold .product-image-placeholder-fallback, /* Ensure this is also targeted */
+.product-card.sold .product-image {
+  opacity: 0.6;
+}
+.product-card.sold .product-info .product-name {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* Error and Info messages within ProductGrid context */
+/* These should use the global .error-message-global or .info-message-global if defined */
+/* Or, if they are specific to ProductGrid's "No NFTs found": */
+.product-grid > .info-message { /* Target direct child if it's for "No NFTs" */
+    grid-column: 1 / -1; /* Span all columns */
+    text-align: center;
+    padding: 30px;
+    font-size: 1.1em; /* Consistent with CollectionPage's info messages */
+    color: #555;
+}
