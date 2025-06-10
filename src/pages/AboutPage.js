@@ -86,7 +86,7 @@ function AboutPage() {
             Be part of Authentix, where luxury meets transparency, and every product is guaranteed authentic
             through blockchain-backed digital twins.
           </p>
-          <Link to="/" className="cta-button">
+              <Link to="/" className="cta-button button-base button-primary">
             Explore the Marketplace
           </Link>
         </div>

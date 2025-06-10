@@ -18,7 +18,7 @@ function HowToUsePage() {
           <div className="step-content">
             <h3>Install MetaMask</h3>
             <p>First, you'll need a cryptocurrency wallet. We recommend MetaMask, which is available as a browser extension.</p>
-            <a href="https://metamask.io/download.html" target="_blank" rel="noopener noreferrer" className="step-link">
+                <a href="https://metamask.io/download.html" target="_blank" rel="noopener noreferrer" className="step-link button-base button-secondary"> {/* Styled as a button */}
               Download MetaMask
             </a>
           </div>
@@ -43,7 +43,7 @@ function HowToUsePage() {
             <h3>Get Test ETH</h3>
             <p>You'll need Sepolia ETH to make transactions. Visit a faucet and enter your wallet address to receive test ETH.</p>
             {/* Using a generic search link for faucets as direct links can become outdated */}
-            <a href="https://www.google.com/search?q=sepolia+eth+faucet" target="_blank" rel="noopener noreferrer" className="step-link">
+                <a href="https://www.google.com/search?q=sepolia+eth+faucet" target="_blank" rel="noopener noreferrer" className="step-link button-base button-secondary"> {/* Styled as a button */}
               Find a Sepolia Faucet
             </a>
           </div>
@@ -70,7 +70,7 @@ function HowToUsePage() {
           <div className="step-content">
             <h3>View Your Collection</h3>
             <p>After purchasing, visit the "My Collection" page to see your owned NFTs and request physical delivery if available.</p>
-            <Link to="/collection" className="step-link">
+                <Link to="/collection" className="step-link button-base button-secondary"> {/* Styled as a button */}
               Go to My Collection
             </Link>
           </div>
@@ -96,7 +96,7 @@ function HowToUsePage() {
       </div>
 
       <div className="cta-section"> {/* Reusing .cta-section from AboutPage.css for consistency */}
-        <Link to="/" className="cta-button">
+            <Link to="/" className="cta-button button-base button-primary"> {/* Added base and primary button classes */}
           Start Exploring the Marketplace
         </Link>
       </div>

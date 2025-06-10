@@ -125,6 +125,7 @@ function AdminPage() {
             <input
               id="nft-name" type="text" placeholder="Enter NFT name"
               value={name} onChange={(e) => setName(e.target.value)}
+              className="input-base"
             />
           </div>
           <div className="form-group">
@@ -132,6 +133,7 @@ function AdminPage() {
             <input
               id="nft-price" type="text" placeholder="0.05"
               value={price} onChange={(e) => setPrice(e.target.value)}
+              className="input-base"
             />
           </div>
           <div className="form-group">
@@ -155,7 +157,7 @@ function AdminPage() {
           <button
             onClick={listNFT}
             disabled={uploading || !name || !price || !file}
-            className="list-button"
+            className="list-button button-base button-primary"
           >
             {uploading ? (file && !previewCid ? "Uploading to IPFS..." : "Processing Transaction...") : "List NFT"}
           </button>
@@ -178,7 +180,11 @@ function AdminPage() {
         {file && !previewCid && !uploading && (
              <div className="form-container-admin" style={{marginTop: '20px', textAlign: 'center'}}>
                 <p style={{fontSize: '0.9em', color: '#555'}}>Preview your image on IPFS before listing (optional):</p>
-                <button onClick={uploadToPinata} disabled={uploading} className="list-button" style={{backgroundColor: '#007bff', width: 'auto'}}>
+                <button
+                  onClick={uploadToPinata}
+                  disabled={uploading}
+                  className="upload-preview-button button-base" // Removed inline style, uses CSS class now
+                >
                     {uploading ? "Uploading..." : "Upload & Preview on IPFS"}
                 </button>
             </div>

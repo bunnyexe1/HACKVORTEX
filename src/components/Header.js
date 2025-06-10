@@ -13,7 +13,7 @@ function Header({ walletAddress, onConnectWallet }) {
           <Link to="/">NFTMarketplace</Link>
         </div>
         <div className="header-search">
-          <input type="text" placeholder="Search" className="search-input" />
+          <input type="text" placeholder="Search" className="search-input input-base" />
         </div>
         <Navigation />
         <div className="header-account-actions">
@@ -24,13 +24,13 @@ function Header({ walletAddress, onConnectWallet }) {
           ) : (
             <button
               onClick={onConnectWallet} // This is connected to App.js's handler
-              className="connect-wallet-button" // Using specific class for styling
+              className="connect-wallet-button button-base button-primary"
             >
               Connect Wallet
             </button>
           )}
-          <Link to="/collection" className="header-button-link">My Collection</Link>
-          <Link to="/admin" className="header-button-link">Admin</Link>
+          <Link to="/collection" className="header-button-link button-base button-light">My Collection</Link>
+          <Link to="/admin" className="header-button-link button-base button-light">Admin</Link>
         </div>
       </div>
     </header>

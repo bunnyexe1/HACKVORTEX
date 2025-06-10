@@ -164,26 +164,25 @@ function CollectionPage({ setWalletAddressInHeader }) {
       <div className="collection-header">
         <h1>{pageTitle}</h1>
         <div className="collection-nav-links">
-            <Link to="/" className="nav-button">Marketplace</Link>
+            <Link to="/" className="nav-button button-base button-light">Marketplace</Link> {/* Styled as a button */}
         </div>
       </div>
 
-      {error && <p className="error-message">{error}</p>}
+      {error && <p className="error-message error-message-global">{error}</p>} {/* Added global message class */}
 
       {loading ? (
         <div className="loading-message">Loading your collection...</div>
-      ) : !walletAddress ? ( // If still no wallet address after loading attempt
-         <div className="info-message">
+      ) : !walletAddress ? (
+         <div className="info-message info-message-global"> {/* Added global message class */}
             <h2>Wallet Not Connected</h2>
             <p>Please connect your wallet to view your NFTs.</p>
-            {/* Optionally, add a manual connect button here if connectWallet on load isn't sufficient */}
-            {/* <button onClick={connectWallet} className="action-button">Connect Wallet</button> */}
+            {/* <button onClick={connectWallet} className="action-button button-base button-primary">Connect Wallet</button> */}
          </div>
       ) : ownedNFTs.length === 0 && !error ? (
-        <div className="info-message">
+        <div className="info-message info-message-global"> {/* Added global message class */}
           <h2>No NFTs in Your Collection Yet.</h2>
           <p>Once you purchase an NFT from the marketplace, it will appear here.</p>
-          <Link to="/" className="action-button explore-button">Explore Marketplace</Link>
+          <Link to="/" className="action-button explore-button button-base button-primary">Explore Marketplace</Link> {/* Styled as a button */}
         </div>
       ) : (
         <ProductGrid

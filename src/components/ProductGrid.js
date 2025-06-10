@@ -6,7 +6,8 @@ import './ProductGrid.css';
 function ProductGrid({ nfts, walletAddress, onBuyNFT, onRedeemNFT, extractCidFn }) {
 
   if (!nfts || nfts.length === 0) {
-    return <p className="info-message">No NFTs currently available in the marketplace.</p>;
+    // Using info-message for specific styling, and info-message-global for base alert styling
+    return <p className="info-message info-message-global">No NFTs currently available in the marketplace.</p>;
   }
 
   return (
@@ -66,15 +67,15 @@ function ProductGrid({ nfts, walletAddress, onBuyNFT, onRedeemNFT, extractCidFn 
                 {!nft.sold ? (
                   <button
                     onClick={() => onBuyNFT(nft.listingId, nft.price)}
-                    className="action-button buy-button"
-                    disabled={!walletAddress || walletAddress === nft.seller} // Disable if wallet not connected or if user is the seller
+                    className="action-button buy-button button-base" // Added button-base
+                    disabled={!walletAddress || walletAddress === nft.seller}
                   >
                     Buy Now
                   </button>
                 ) : isOwner && !nft.redeemed ? (
                   <button
                     onClick={() => onRedeemNFT(nft.listingId)}
-                    className="action-button redeem-button"
+                    className="action-button redeem-button button-base" // Added button-base
                   >
                     Request Delivery
                   </button>

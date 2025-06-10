@@ -8,8 +8,8 @@ function Footer() {
         <div className="footer-newsletter">
           <h5>Sign up for exclusive promos, popular releases & more</h5>
           <form className="newsletter-form">
-            <input type="email" placeholder="Email Address" className="newsletter-input" />
-            <button type="submit" className="newsletter-button">Sign Up</button>
+            <input type="email" placeholder="Email Address" className="newsletter-input input-base" />
+            <button type="submit" className="newsletter-button button-base">Sign Up</button> {/* Assuming .newsletter-button provides specific colors */}
           </form>
           <p className="newsletter-disclaimer">
             By signing up, you confirm you want to receive emails about GOAT's products and services and you agree to our Terms & Conditions and Privacy Policy.
@@ -64,7 +64,7 @@ function Footer() {
 
         <div className="footer-app-download">
           <p>Never miss a drop again. Download the GOAT app for reminders and exclusive promotions.</p>
-          <a href="https://goat.app.link/C8eM8PorVbb" target="_blank" rel="noopener noreferrer" className="download-app-button">Download App</a>
+          <a href="https://goat.app.link/C8eM8PorVbb" target="_blank" rel="noopener noreferrer" className="download-app-button button-base">Download App</a> {/* Assuming .download-app-button provides specific colors */}
         </div>
       </div>
       <div className="footer-copyright">
